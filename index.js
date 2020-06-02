@@ -13,6 +13,10 @@ restService.use(
 
 restService.use(bodyParser.json());
 
+restService.get("/", function(req, res) {
+  return res.json({ "success" : "Successfully tested the application" });
+});
+
 restService.post("/echo", function(req, res) {
   var speech =
     req.body.queryResult &&
